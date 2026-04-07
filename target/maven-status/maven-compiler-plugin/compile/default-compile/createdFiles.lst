@@ -1,0 +1,4 @@
+com\javanauta\agendador_horarios\infrastructure\repository\AgendamentoRepository.class
+com\javanauta\agendador_horarios\AgendadorHorariosApplication.class
+com\javanauta\agendador_horarios\service\AgendamentoService.class
+com\javanauta\agendador_horarios\infrastructure\entity\Agendamento.class

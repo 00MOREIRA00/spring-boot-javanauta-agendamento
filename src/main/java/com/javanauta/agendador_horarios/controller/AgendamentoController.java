@@ -24,6 +24,18 @@ public class AgendamentoController {
     public ResponseEntity<Void> deletarAgendamento(@RequestParam String cliente, @RequestParam LocalDateTime dataHoraAtendimento) {
         agendamentoService.deletarAgendamento(cliente, dataHoraAtendimento);
         return ResponseEntity.noContent().build();
+    }
 
+    @GetMapping
+    public ResponseEntity<Agendamento> buscarAgendamentoDia(@RequestParam LocalDateTime data) {
+        return ResponseEntity.ok(agendamentoService.buscarAgendamentosDia(data));
+    }
+
+    @PutMapping
+    public ResponseEntity<Agendamento> alterarAgendamentos(@RequestBody Agendamento agendamento,
+                                                           @RequestParam String cliente,
+                                                           @RequestParam LocalDateTime dataHoraAgendamento) {
+        return ResponseEntity.accepted().body(agendamentoService.alterarAgendamento(agendamento,
+                cliente, dataHoraAgendamento));
     }
 }

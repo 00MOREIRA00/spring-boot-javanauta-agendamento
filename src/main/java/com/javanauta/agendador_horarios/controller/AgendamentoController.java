@@ -7,9 +7,12 @@ import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
-@RestController
+@RestController()
+@RequestMapping("/agendamentos")
 @RequiredArgsConstructor
 public class AgendamentoController {
 
@@ -17,7 +20,7 @@ public class AgendamentoController {
 
     @PostMapping
     public ResponseEntity<Agendamento> salvarAgendamento(@RequestBody Agendamento agendamento) {
-        return ResponseEntity.accepted().body(agendamentoService.salvarAgendamento(agendamento));
+        return ResponseEntity.ok().body(agendamentoService.salvarAgendamento(agendamento));
     }
 
     @DeleteMapping
@@ -27,8 +30,8 @@ public class AgendamentoController {
     }
 
     @GetMapping
-    public ResponseEntity<Agendamento> buscarAgendamentoDia(@RequestParam LocalDateTime data) {
-        return ResponseEntity.ok(agendamentoService.buscarAgendamentosDia(data));
+    public ResponseEntity<List<Agendamento>> buscarAgendamentosDia(@RequestParam LocalDate data) {
+        return ResponseEntity.ok().body(agendamentoService.buscarAgendamentosDia(data));
     }
 
     @PutMapping

@@ -1,0 +1,39 @@
+# Git
+.git
+.gitignore
+
+# Build Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Build Gradle
+build/
+.gradle/
+
+# Logs
+*.log
+logs/
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.*
+
+# Test outputs
+test-output/
+surefire-reports/
+
+# Temporary files
+tmp/
+temp/
+
+# Docker
+docker-compose.yml
